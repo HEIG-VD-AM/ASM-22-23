@@ -1,0 +1,29 @@
+ Cette partie a été réalisée avec la version ARM :
+
+Lorsque nous sommes dans la fonction check_password, il faut surtout s'intéresser au return et à la sortie de la fonction.
+Le code assembleur de ces deux parties ressemble à ça : 
+
+15                return (hash == MY_HASH);
+82000064:   ldr     r2, [r11, #-8]
+82000068:   movw    r3, #48879      ; 0xbeef
+8200006c:   movt    r3, #57005      ; 0xdead
+82000070:   cmp     r2, r3
+82000074:   moveq   r3, #1
+82000078:   movne   r3, #0
+8200007c:   uxtb    r3, r3
+16        }
+82000080:   mov     r0, r3
+82000084:   add     sp, r11, #0
+82000088:   pop     {r11}           ; (ldr r11, [sp], #4)
+8200008c:   bx      lr
+
+Dans la 15ème instruction, on remarque que notre valeur rentrée est mise dans le registre r2 et que la valeur attendue est mise dans le registre r3 (bon choix de valeur au passage).
+Ensuite, il y a une comparaison qui est faite entre les deux valeurs et la valeur 1 est mise si la comparaison est vraie et 0 sinon.
+
+On comprend alors que si on arrive à mettre la valeur 1 dans r3 avant le retour de la fonction, on a gagné. 
+C'est donc ce que j'ai fais avant que la 16ème instruction se fasse et juste après la 15ème, j'ai changé la valeur de r3 pour avoir un 1 dedans. Domc lorsqu'il vérifie si j'ai gagné ou perdu, il remarque qu'il y a un 1 dedans et pense que j'ai trouvé le bon mot de passe.
+
+Q1. On aurait pu copier la valeur attendue qui se situait dans r3 et la mettre dans notre registre r2 avant que la comparaison se fasse.
+    
+Q2. Je pense qu'en général, il n'est jamais une bonne idée de modifier directement le PC, car cela pourrait causer des erreurs d'exécution ou des crash du programme comme vu en cours.
+    Si on veut se déplacer à une instruction précise, il vaut mieux chercher un buffer overflow. 

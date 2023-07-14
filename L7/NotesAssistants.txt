@@ -1,0 +1,20 @@
+Martins Lemos Pinto Alexis
+
+Variadiques   :   2.0 / 2.0
+
+Fibonacci     :   2.0 / 2.0
+
+Stack Smash   :   1.0 / 1.0
+
+Bonus / Malus :   nan / 5.0
+
+
+Note finale   : 6
+
+
+Remarque assistant: 
+Fonction variadique parfaites.
+
+Pour Fibonnacci rien a dire non plus tu utilises pas de registre scratch donc tu t'évites de devoir push des choses.
+
+Très bon labo :)

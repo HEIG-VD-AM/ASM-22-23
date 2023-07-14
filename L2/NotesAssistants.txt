@@ -1,0 +1,13 @@
+Martins Lemos Pinto Alexis
+
+Conception Makefile :  0.99 / 1.       Poids : 0.7
+Crackme             :   1.0 / 1.       Poids : 0.3
+Bonus / Malus       :   nan / 1.       Poids : 1.0
+
+Note finale         : 5.9
+
+
+Remarque assistant: 
+Ton Makefile fait ce qui est attendu, néanmoin tu aurais pu changer un truc, dans la rule de la création de ta target tu ajoutes la lib ($(TARGET): $(OBJS) $(LIB)) mais tu aurais pu éviter de le faire puisque dans tes flags de linkage tu spécifie que la librairie ce trouve dans "." avec le -L de ce fait tu aurait pu juste enlever la lib du linkage et juste le rajouter en première ligne de la rule all, comme : "all: checklib $(TARGET) $(TARGET).bin". Et également l'indentage est important dans ta rule pour checklib n'est accessible que si on l'appel depuis l'extérieur avec make checklib et pas depuis ton makefile. Mais c'est pas très important.
+
+Pour crackme c'est parfait :)

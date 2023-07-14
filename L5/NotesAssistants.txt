@@ -1,0 +1,15 @@
+Martins Lemos Pinto Alexis
+
+Macro            :   1.0 / 1.       Poids : 0.3
+Image processing :   1.0 / 1.       Poids : 0.7
+Bonus / Malus    :   nan / 1.       Poids : 1.0
+
+Note finale      : 6
+
+
+Remarque assistant: 
+Maccros parfaites.
+
+La maccros check_border est bien. Tu aurais pu utiliser res pour stocker le résultat. La double boucle est parfaite et magnifiquemetn commentée.
+
+Superbe labo :)

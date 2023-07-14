@@ -1,0 +1,16 @@
+Cette partie a été réalisée avec la version x86 :
+
+Dans un premier temps, j'ai exécuté objdump et j'ai mis la sortie dans un fichier pour pouvoir mieux naviguer à travers le fichier :
+
+       if (pswd_valid) {
+   40119:	83 7d f8 00          	cmpl   $0x0,-0x8(%ebp)
+   4011d:	74 21                	je     40140 <main+0xea>
+   
+On voit ici l'instruction de saut qui était cherchée, celle-ci commence à l'adresse 0x4011d et elle fait 2 octets de long.
+
+J'ai donc remplacé cette instruction par 2 NOP avec les commandes suivantes :
+=> mw.b 0x4011d 0x90
+=> mw.b 0x4011e 0x90
+
+Finalement, j'ai exécuté le programme (go 0x40000) et j'ai rentré un mot de passe quelconque et c'était gagné. 
+Cela fonctionne car le saut n'est plus pris en compte dans les instructions. Il passe tout droit et tombe sur la prochaine instruction qui est le message de victoire.

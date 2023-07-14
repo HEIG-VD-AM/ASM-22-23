@@ -1,0 +1,17 @@
+Martins Lemos Pinto Alexis
+
+Pattern Detection         :   1.0 / 1.0
+
+Entrée/sortie de fonction :   1.0 / 2.0
+
+Codage                    :   2.0 / 2.0
+
+Bonus / Malus             :   nan / 5.0
+
+
+Note finale               : 5
+
+
+Remarque assistant: 
+Prologue et épilogue pas bon, tu n'as pas sauvegarder les registres non scratch que tu as utilisé. Tout le reste est très bien, tu aurai pu sortir le horizontale add mais c'est pas la fin du monde.
+Tu as pris le temps de soigner le code :)

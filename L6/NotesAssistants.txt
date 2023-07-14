@@ -1,0 +1,13 @@
+Martins Lemos Pinto Alexis
+
+Binary Tree   :   1.0 / 1.       Poids : 0.5
+Backtrace     :   1.0 / 1.       Poids : 0.5
+Bonus / Malus :   nan / 1.       Poids : 1.0
+
+Note finale   : 6
+
+
+Remarque assistant: 
+Backtrace excellente.
+
+Ton algo est simple pour le parcours de l'arbre. Super bien commenté.

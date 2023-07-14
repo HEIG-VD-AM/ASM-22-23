@@ -1,0 +1,25 @@
+Martins Lemos Pinto Alexis
+
+Directives                          :   1.0 / 1.       Poids : 0.05
+Opération artihmétiques             :   1.0 / 1.       Poids : 0.1
+Checksum                            :  0.91 / 1.       Poids : 0.35
+Conversion de chaînes de caractères :  0.76 / 1.       Poids : 0.5
+Bonus / Malus                       :   nan / 1.       Poids : 1.0
+
+Note finale                         : 5.2
+
+
+Remarque assistant: 
+Directives parfait.
+
+Pour GPIO, c'est bien d'avoir préshot les valeurs intermédiaire des claculs :) Très bonne pratique de copier initialement la valeur d'eax ailleur pour te simplifier la tâche. Juste une instruction inutile à la fin tu fais un mov ecx, edx puis edx eax, tu aurais pu le simplifier en un seul mov ecx, eax.
+
+Checksum parity word parfait, pense juste à un peu plus commenté ton code. Ton check parity est bien également, mais manque de commentaire aussi. L'utilisation du sub est maline.
+
+T'as méthode de récupération du 4 et du 1 et un peu tirée par cheveux... Tu aurais pu le faire beaucoup plus simplement avec des shifts pour avoir exactement le même résultats genre : 
+shll $4, %ebx
+movb %al, %bl
+andb $0xf, %bl
+
+et tu te retrouves avec ton 0x0401
+Tu aurais pu simplifier en mettant par example le 0x0401 dans un autre registrer et faisant une boucle qui ne travail que sur les bits de poids faible et de shift sur deux itérations, ça aurait évité de duppliquer entièrement le code.

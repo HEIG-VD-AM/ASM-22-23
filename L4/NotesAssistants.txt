@@ -1,0 +1,22 @@
+Martins Lemos Pinto Alexis
+
+Assembleur inline       :  0.95 / 1.       Poids : 0.1
+Path Finding – Distance :  0.93 / 1.       Poids : 0.3
+Path Finding – Terrain  :   1.0 / 1.       Poids : 0.6
+Bonus / Malus           :   nan / 1.       Poids : 1.0
+
+Note finale             : 5.9
+
+
+Remarque assistant: 
+Lzcnt, tu aurais pu mettre directement 0x80000000 pour ton masque :) Ta condition != MASK n'est pas vraiment utile. Le résultat de ton and sera toujours 0 temps que le premier 1 n'atteindra pas la position 31. Et qu'est-ce qu'il se passe si t'as valeur vaut 0 ?
+
+Distances: 
+
+- Discrète, parfait
+- Hamming, tes commentaires ne sont pas cohérent avec ton code. Après la récupération des Y tu dis que tu compare les X.. (détails). Mais sinon très bien.
+- Manhattan très bien.
+- Semi distance, puisque tu élèves tes valeurs au carré, il n'est pas nécessaire de vérifier si le résultat de la soustraction est positif ou négatif.
+
+Path-finding:
+Code parfait. Très bonne utilisation de l'instruction MLA. Les branchement sont utilisé adéquatement :) Et tes commentaires sont très bien !
